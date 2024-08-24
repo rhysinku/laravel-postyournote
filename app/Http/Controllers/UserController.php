@@ -77,7 +77,10 @@ class UserController extends Controller
     }
     public function author(User $user)
     {   
-        $posts = $user->post()->get();
-        return view('post.author' , compact('posts', 'user'));
+        $author = User::with('post')->find($user->id);
+        $posts = $author->post;
+
+        // dd($author , $posts);
+        return view('post.author' , compact('posts', 'author'));
     }
 }
