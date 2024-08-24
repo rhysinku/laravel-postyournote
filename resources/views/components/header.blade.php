@@ -1,12 +1,12 @@
 <header class="bg-gray-100">
   <div class="container mx-auto flex justify-between items-center py-5">
 
-    <a href=""><h1>Post Your Note</h1></a>
+    <a href={{route('home')}}><h1 class="font-bold text-4xl text-blue-950">PostYourNote</h1></a>
     <nav>
       <ul class="flex items-center justify-between gap-3">
-        <li><a href="/">Home</a></li>
-        <li><a href="/">Login</a></li>
-        <li><a href="/">Register</a></li>
+        <li><a href={{route('home')}}>Home</a></li>
+        <li><a href={{route('view.login')}}>Login</a></li>
+        <li><a href={{route('view.register')}}>Register</a></li>
       </ul>
     </nav>
 </div>
