@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::paginate(6);
+        $posts = Post::with('user')->paginate(6);
         return view('post.home' , compact('posts'));
     }
 
@@ -40,6 +40,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
     
+        $post = Post::with('user')->find($post->id);
         return view('post.page', compact('post'));
     }
 

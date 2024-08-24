@@ -75,4 +75,9 @@ class UserController extends Controller
     {
         //
     }
+    public function author(User $user)
+    {   
+        $posts = $user->post()->get();
+        return view('post.author' , compact('posts', 'user'));
+    }
 }

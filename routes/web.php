@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class , 'index']);
 Route::get('/post/{post}', [PostController::class , 'show'])->name('posts.show');
+Route::get('/author/post/{user}', [UserController::class , 'author'])->name('posts.author');
 
 
 
