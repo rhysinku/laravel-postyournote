@@ -7,10 +7,11 @@
         @foreach ($posts as $post)     
         <section class="max-w-md w-full p-5 rounded-xl bg-blue-200">
             <h2 class="font-bold text-3xl mb-1">{{$post->title}}</h2>
-            <span class="italic text-sm text-blue-400 mb-2">author</span>
+            <i class=" text-sm text-blue-400 mb-2">author</i>
             <p>{{$post->message}}</p>
-            <div class="mt-3">
+            <div class="mt-3 flex flex-wrap justify-between items-center">
                 {{$post->created_at->diffForHumans()}}
+                <a href="{{route('posts.show', $post->id)}}" class="hover:underline text-blue-800">Read More</a>
             </div>
         </section>
         @endforeach
