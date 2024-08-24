@@ -18,7 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
-            'message' => $this->faker->realText(),
+            'message' => $this->faker->realText('500'),
         ];
     }
 }
