@@ -18,6 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
+            'user_id' => $this->faker->numberBetween(1,10),
             'message' => $this->faker->realText('500'),
         ];
     }

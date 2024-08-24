@@ -11,4 +11,8 @@ class User extends Model
 
     protected $fillable = 
     ['username','role', 'email', 'password'];
+
+    public function post(){
+        return $this->hasMany(Post::class);
+    }
 }
