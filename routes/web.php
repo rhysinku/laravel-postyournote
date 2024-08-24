@@ -4,6 +4,13 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    return view('post.home');
+});
+
+
+
+
+Route::get('/register', function () {
     return view('auth.register');
 });
 
