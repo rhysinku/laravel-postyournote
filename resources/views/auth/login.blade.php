@@ -1,6 +1,7 @@
 <x-layout>
+    <h1>Login</h1>
+ <form action="">
 
-    <h1>login</h1>
-
+ </form>
 
 </x-layout>

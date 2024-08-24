@@ -4,7 +4,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.register');
 });
 
 Route::get('/login', function () {
@@ -12,3 +12,7 @@ Route::get('/login', function () {
 });
 
 Route::get('/dashboard',[UserController::class, 'index']);
+
+
+// Auth
+Route::post('/auth', [UserController::class , 'create'])->name('auth.create');
