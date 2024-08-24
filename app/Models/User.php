@@ -10,5 +10,5 @@ class User extends Model
     use HasFactory;
 
     protected $fillable = 
-    ['name','rule', 'email', 'password'];
+    ['username','role', 'email', 'password'];
 }
