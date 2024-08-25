@@ -25,15 +25,7 @@ class UserController extends Controller
     {
 
 
-      $result =  $request->validate([
-            'username' => 'required',
-            "email" => 'required|string|unique:users|email',
-            'password'=> 'required|confirmed'
-      ]);
     
-      if($result){
-        return dd('success');
-      }      
     }
 
     /**
