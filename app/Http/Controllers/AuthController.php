@@ -43,6 +43,15 @@ class AuthController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = request()->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        Auth::attempt($validated);
+        request()->session()->regenerate();
+        return redirect()->route('home');   
+        
     }
 
     /**

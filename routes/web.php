@@ -36,4 +36,5 @@ Route::get('/dashboard',[UserController::class, 'index']);
 
 // Auth
 Route::post('/register', [AuthController::class , 'create'])->name('auth.create');
-Route::post('/login', [AuthController::class , 'destroy'])->name('auth.logout');
+Route::post('/logout', [AuthController::class , 'destroy'])->name('auth.logout');
+Route::post('/login', [AuthController::class , 'store'])->name('auth.store');

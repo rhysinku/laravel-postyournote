@@ -21,7 +21,7 @@ class User extends Authenticatable
     // Cast some attribute
     protected function casts(): array{
         return [
-            'password' => 'password',
+            'password' => 'hashed'
         ];
     }
 }
