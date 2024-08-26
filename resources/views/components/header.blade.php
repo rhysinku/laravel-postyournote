@@ -5,8 +5,11 @@
     <nav>
       <ul class="flex items-center justify-between gap-3">
         <li><a href={{route('home')}}>Home</a></li>
-        <li><a href={{route('view.login')}}>Login</a></li>
-        <li><a href={{route('view.register')}}>Register</a></li>
+       @guest
+       <li><a href={{route('view.login')}}>Login</a></li>
+       <li><a href={{route('view.register')}}>Register</a></li>
+       @endguest
+       
       </ul>
     </nav>
 </div>

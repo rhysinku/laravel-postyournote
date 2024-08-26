@@ -35,4 +35,4 @@ Route::get('/dashboard',[UserController::class, 'index']);
 
 
 // Auth
-Route::post('/auth', [AuthController::class , 'create'])->name('auth.create');
+Route::post('/register', [AuthController::class , 'create'])->name('auth.create');

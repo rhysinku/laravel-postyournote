@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -22,7 +23,7 @@ class AuthController extends Controller
     public function create(Request $request)
     {
         //
-        $result =  $request->validate([
+        $validated =  $request->validate([
             'username' => 'required',
             // Validate with String 
             "email" => 'required|string|unique:users|email',
@@ -30,9 +31,10 @@ class AuthController extends Controller
             'password'=> ['required', 'confirmed']
       ]);
     
-      if($result){
-        return dd('success');
-      }      
+       $user = User::create($validated);
+        Auth::login($user);
+       return(redirect()->route('home'));
+
     }
 
     /**
