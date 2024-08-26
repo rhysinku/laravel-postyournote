@@ -10,6 +10,14 @@
        <li><a href={{route('view.register')}}>Register</a></li>
        @endguest
        
+
+       @auth
+         <form action="{{route('auth.logout')}}" method="POST">
+          @csrf
+          <button>Logout</button>
+        </form>
+       @endauth
+
       </ul>
     </nav>
 </div>
